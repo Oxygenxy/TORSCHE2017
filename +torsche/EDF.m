@@ -5,6 +5,11 @@ ts=colour(ts);
 
 c    =  ts.ProcTime;    
 per  =  ts.Period;
+
+if(sum(c./per)>1)
+    msgbox('Sorry,can??t schedule');
+end
+
 remainProc = c; %remain ProcTime need to be process
 
 noft = size(c,2);   %numbers of tasks
@@ -112,7 +117,7 @@ tempDdle = (fix(tmax./per)+1).*per;
 
 end
 
-add_schedule(resultts, 'EDF schedule');
+resultts.schedule.is = 1 %equal to add_schedule(resultts, 'EDF schedule');
 
 end
 

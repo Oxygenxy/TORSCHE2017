@@ -5,10 +5,25 @@ ts=colour(ts);
 
 c    =  ts.ProcTime;    
 per  =  ts.Period;
+
+
 remainProc = c; %remain ProcTime need to be process
 tempRels = [];
 
 noft = size(c,2);   %numbers of tasks
+
+U=c./per;
+H=log2(per)-floor(log2(per));
+
+B=max(H)-min(H);%feas
+if(B<(1-1/noft))
+    if(U>((noft-1)*(power(2,B/(noft-1))-1)+power(2,1-B)))
+        msgbox('Sorry,can''schedule');
+    end
+elseif(U>noft*(power(2,1/noft)-1))
+    msgbox('Sorry,can''schedule');  
+end
+
 
 tmax = 0;   %time axis
 tstop = 1;  %stop time
@@ -72,6 +87,9 @@ function setDdleRemainProc() % if time over Deadline then reset remainProc to eq
          indE = find(tempRels==minRels);
          for k = 1:size(indE,2)
             index = indE(k);
+            if(remainProc(index)>0)
+                msgbox('time exceed');
+            end
             remainProc(index) = c(index);
             addResultts(index);
          end
@@ -84,7 +102,7 @@ while(tmax<tstop)
     if(I)
         
         tmaxPlus = tmax+remainProc(I(1));
-        tempRels = updateRels()
+        tempRels = updateRels();
         minRels = min(tempRels);
         if(tmaxPlus < minRels)
         
