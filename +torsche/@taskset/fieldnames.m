@@ -66,18 +66,18 @@ Props = {'Prec' 'schedule' 'ScheduleDesc' 'tasks' 'TSUserParam'  Props{:}};
 
 % Get virtual properties
 %if ~isempty(varargin) & varargin{1} == 1
-    [VProps,VAsgnVals,VDefVal] = fieldnames(torsche.task(1));
-    i = 1;
-    while (i <= length(VProps))
-        if ~isempty(find(strcmp(VProps(i),Props), 1))
-            VProps = [VProps(1:i-1) VProps(i+1:length(VProps))];
-            VAsgnVals = [VAsgnVals(1:i-1) VAsgnVals(i+1:length(VAsgnVals))];
-            VDefVal = [VDefVal(1:i-1) VDefVal(i+1:length(VDefVal))];
-        end
-        i = i + 1;
-    end
+%     [VProps,VAsgnVals,VDefVal] = fieldnames(torsche.task(1));
+%     i = 1;
+%     while (i <= length(VProps))
+%         if ~isempty(find(strcmp(VProps(i),Props), 1))
+%             VProps = [VProps(1:i-1) VProps(i+1:length(VProps))];
+%             VAsgnVals = [VAsgnVals(1:i-1) VAsgnVals(i+1:length(VAsgnVals))];
+%             VDefVal = [VDefVal(1:i-1) VDefVal(i+1:length(VDefVal))];
+%         end
+%         i = i + 1;
+%     end
 %else
-%    VProps = {}; VAsgnVals = {}; VDefVal ={};
+    VProps = {}; VAsgnVals = {}; VDefVal ={};
 %end
 
 Props = {Props{:} VProps{:}};
