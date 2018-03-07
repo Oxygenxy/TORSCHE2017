@@ -59,7 +59,9 @@ function [Props,AsgnVals,DefVal] = fieldnames(task)
 [Props,AsgnVals,DefVal] = fieldnames(task.parent);
 
 % Add TASK properties
-Props = {'Name' 'ProcTime' 'ReleaseTime' 'Deadline' 'DueDate' 'Weight' 'Processor' 'UserParam' Props{:}}; %'ALAP' 'ASAP'
+%Props = {'Name' 'ProcTime' 'ReleaseTime' 'Deadline' 'DueDate' 'Weight' 'Processor' 'UserParam' Props{:}}; %'ALAP' 'ASAP'
+
+Props = {'Name' 'ProcTime' 'ReleaseTime' 'Deadline' 'DueDate' 'Weight' 'Processor' 'UserParam' 'schLength' Props{:}}; %'ALAP' 'ASAP'
 
 % Also return assignable values if needed
 if nargout>1,

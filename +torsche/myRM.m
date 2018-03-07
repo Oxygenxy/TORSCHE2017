@@ -124,7 +124,7 @@ while(tmax<tstop)
     
 end
 
-add_schedule(resultts, 'EDF schedule');
+add_schedule(resultts, 'RM schedule');
 
 end
 

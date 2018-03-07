@@ -1,4 +1,4 @@
-function resultts = EDF(ts)
+function resultts = myEDF(ts)
 
 resultts = [];  %to store task with schedule
 ts=colour(ts);
