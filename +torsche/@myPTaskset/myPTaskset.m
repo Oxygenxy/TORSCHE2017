@@ -25,7 +25,7 @@ classdef myPTaskset < handle&torsche.taskset
             initTstop(obj);
             initRemainProc(obj);
             initReadyTasks(obj);
-            initTempRels(obj);
+            updateTempRels(obj);
             
         end
         
@@ -66,9 +66,10 @@ classdef myPTaskset < handle&torsche.taskset
             end
         end
         
-        function initTempRels(obj)
+        function updateTempRels(obj)
         
-            obj.tempRels=obj.per;
+%            obj.tempRels=obj.per;
+             obj.tempRels = (fix(obj.tmax./obj.per)+1).*obj.per;
         
         end
         

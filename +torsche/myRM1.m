@@ -1,4 +1,4 @@
-function resultts = myRM(ts)
+function resultts = myRM1(ts)
 
 resultts = [];  %to store task with schedule
 ts=colour(ts);
