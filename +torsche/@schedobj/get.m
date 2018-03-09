@@ -102,7 +102,7 @@ if ni==2,
                 end
                 Value{i} = Value_tmp;
             end
-        catch    
+       catch    
             if isfield(s, 'parent')
                 try
                     Value{i} = get(getfield(s, s.parent), Property{i});

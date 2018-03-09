@@ -1,4 +1,4 @@
-classdef schedobj
+classdef (HandleCompatible) schedobj
     properties
         Notes
         version

@@ -1,4 +1,4 @@
-function resultts = myRR( ts,tSlice )
+function resultts = myRR1( ts,tSlice )
 
 
 resultts = [];  %to store task with schedule
@@ -77,7 +77,7 @@ while((tmax < tstop)&queue)
         addResultts(i);
         
         while(1)
-            I=find(tempRels  <= tmax);
+            I = find(tempRels  <= tmax);
         
             if(I)
                 [temp,ind] = sort(tempRels(I),2,'ascend');
@@ -88,7 +88,7 @@ while((tmax < tstop)&queue)
             end
         
             if(isempty(queue))
-                tmax=min(tempRels);
+                tmax = min(tempRels);
             else
                 break;
             end

@@ -1,4 +1,4 @@
-classdef taskset < torsche.schedobj
+classdef taskset < torsche.schedobj&handle
     properties
         parent
         tasks
