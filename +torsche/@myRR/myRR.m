@@ -10,6 +10,7 @@ classdef myRR < torsche.myPTaskset
         function obj=myRR(varargin)
             obj = obj@torsche.myPTaskset(varargin{:});
 %             obj.tSlice = varargin{nargin};
+            obj.feasibility();
             obj.mySchedule();
         end
     end

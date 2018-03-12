@@ -81,6 +81,7 @@ classdef myPTaskset < handle&torsche.taskset
     end
     
     methods (Abstract)
+        feasibility(obj)
         mySchedule(obj)
     end
     
